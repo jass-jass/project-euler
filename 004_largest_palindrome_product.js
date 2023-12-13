@@ -11,16 +11,12 @@ function isPal(num)
 
 function largestPalindromeProduct(n) 
 {
-  let i=1, j, lv=0, largest = 0, product = 0, pal =0;
-  while(i<n)
+  let i=1, j, llv=0, ulv=0, largest = 0, product = 0, pal =0;
+  llv = Math.pow(10, n-1);
+  ulv = Math.pow(10, n);
+  for(i= (llv+1); i<ulv; i++)
   {
-    lv = lv*10 + 90;
-    i++;
-  }
-  lv ++;
-  for(i= lv; i<lv+9; i++)
-  {
-    for(j=i; j<lv+9; j++)
+    for(j=i; j<ulv; j++)
     {
       product = i*j;
       if (isPal(product))
@@ -36,4 +32,4 @@ function largestPalindromeProduct(n)
   return largest;
 }
 
-print(largestPalindromeProduct(3));
+largestPalindromeProduct(3);
